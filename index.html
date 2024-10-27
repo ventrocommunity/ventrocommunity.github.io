@@ -6,6 +6,7 @@
     <title>Ventro Community</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="form/img/logo-v.png">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <!-- Background Animation -->
@@ -19,7 +20,9 @@
         <div class="container">
             <h1><img src="form/img/logo-v.png" style="width:50px; top: 50px; margin: 0;">entro Community</h1>
             <p>Komunitas untuk Kolaborasi dan Pertumbuhan Bersama</p>
-            <nav>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="form/index.html">Form Request</a></li>
@@ -27,6 +30,21 @@
                     <li><a href="#">Discord</a></li>
                 </ul>
             </nav>
+
+            <!-- Mobile Menu Icon -->
+            <div class="menu-icon">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <!-- Mobile Menu Box -->
+            <div class="menu">
+                <ul>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="form/index.html">Form Request</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="#">Discord</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -84,5 +102,12 @@
             <p>&copy; 2023 <b><a href="https://ventrocommunity.github.io/" style="text-decoration:none; color: whitesmoke;">Ventro Community</a></b>. All Right Reserved.</p>
         </div>
     </footer>
+
+    <!-- Script untuk Menu Box Toggle -->
+    <script>
+        document.querySelector(".menu-icon").addEventListener("click", function() {
+            document.querySelector(".menu").classList.toggle("show-menu");
+        });
+    </script>
 </body>
 </html>

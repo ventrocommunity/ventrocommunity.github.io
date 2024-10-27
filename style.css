@@ -91,34 +91,10 @@ header nav ul li {
     margin: 0 10px;
 }
 
-/* Animasi lingkaran pada link */
 header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    position: relative;
-    overflow: hidden;
-}
-
-header nav ul li a::after {
-    content: '';
-    position: absolute;
-    text-decoration: overline;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 207, 71, 0.6);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.50s ease;
-    z-index: -1;
-    opacity: 0.7;
-}
-
-header nav ul li a:active::after {
-    transform: translate(-50%, -50%) scale(5);
-    opacity: 0;
 }
 
 header p {
@@ -149,6 +125,7 @@ header p {
     transform: scale(1.05);
     transition: transform 0.3s;
 }
+
 .glass-card-b {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -207,6 +184,48 @@ section h2 {
     to { transform: translateY(0); opacity: 1; }
 }
 
+/* Untuk Mobile Menu */
+.menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.show-menu {
+    display: block;
+}
+
+/* Menu Icon for Mobile */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -217,6 +236,12 @@ section h2 {
     }
     #services .service-item {
         width: 100%;
+    }
+    .desktop-nav {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
     }
 }
 
