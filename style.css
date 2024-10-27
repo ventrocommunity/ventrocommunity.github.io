@@ -1,0 +1,230 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gaya umum */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #000428, #004e92);
+    padding-top: 100px; /* Adjust for fixed header */
+}
+
+/* Background Stars and Planet */
+.stars, .stars2, .stars3 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: transparent;
+}
+
+.stars {
+    background: url('https://i.ibb.co/ynYVJwY/stars1.png') repeat;
+    animation: moveStars 100s linear infinite;
+}
+
+.stars2 {
+    background: url('https://i.ibb.co/2nRRNNm/stars2.png') repeat;
+    animation: moveStars 150s linear infinite;
+}
+
+.stars3 {
+    background: url('https://i.ibb.co/kcZsvRn/stars3.png') repeat;
+    animation: moveStars 200s linear infinite;
+}
+
+.planet {
+    position: fixed;
+    top: 20%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, #ffcf47, #ff8b00, #ff3300);
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: 0 0 30px rgba(255, 207, 71, 0.5);
+    animation: orbit 20s linear infinite;
+}
+
+/* Animasi Stars dan Planet */
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 10000px; }
+}
+
+@keyframes orbit {
+    from { transform: rotate(0deg) translate(20px); }
+    to { transform: rotate(360deg) translate(20px); }
+}
+
+/* Navbar Fixed */
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2.5em;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+/* Animasi lingkaran pada link */
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    text-decoration: overline;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 207, 71, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.50s ease;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+header nav ul li a:active::after {
+    transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
+}
+
+header p {
+    font-style: italic;
+    margin: 10px 0;
+}
+
+/* Menambahkan Margin di Sekitar Elemen */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px; /* Memberikan padding agar tidak terlalu mepet */
+}
+
+/* Glass Card Style */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 120px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.8s ease-out;
+    backdrop-filter: blur(10px);
+}
+
+.glass-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+.glass-card-b {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 100px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.8s ease-out;
+    backdrop-filter: blur(10px);
+}
+
+.glass-card-b:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+/* Efek Glass untuk Elemen Class Timbul */
+.timbul {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-weight: bold;
+    backdrop-filter: none; /* Menghilangkan blur */
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Services Section */
+#services .services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#services .service-item {
+    width: 300px;
+    text-align: center;
+}
+
+/* Section Titles */
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    #services .service-item {
+        width: 100%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
