@@ -23,6 +23,18 @@ body {
     z-index: -1;
     background: transparent;
 }
+.video-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 .stars {
     background: url('https://i.ibb.co/ynYVJwY/stars1.png') repeat;
